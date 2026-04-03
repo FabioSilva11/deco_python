@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.saas.decopython.databinding.ActivityCodeEditorBinding
 import org.json.JSONObject
+import java.io.File
 import kotlin.concurrent.thread
 
 class CodeEditorActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class CodeEditorActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCodeEditorBinding
     private lateinit var pagerAdapter: CodeEditorPagerAdapter
     private lateinit var filePath: String
+    private lateinit var packagesRoot: String
     private var currentCode: String = ""
     private var currentLog: String = ""
     private var isCompiling = false
@@ -35,6 +37,7 @@ class CodeEditorActivity : AppCompatActivity() {
         if (!Python.isStarted()) {
             Python.start(AndroidPlatform(this))
         }
+        packagesRoot = File(filesDir, "python_packages").absolutePath
 
         binding = ActivityCodeEditorBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -122,7 +125,7 @@ class CodeEditorActivity : AppCompatActivity() {
         thread {
             val result = runCatching {
                 pythonModule().callAttr("write_text_file", filePath, codeToRun)
-                pythonModule().callAttr("run_python_code", filePath, codeToRun).toString()
+                pythonModule().callAttr("run_python_code", filePath, codeToRun, packagesRoot).toString()
             }
 
             runOnUiThread {

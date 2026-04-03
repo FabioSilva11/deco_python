@@ -5,6 +5,8 @@ import os
 from pathlib import Path
 import traceback
 
+from package_manager import activate_runtime_packages
+
 
 def read_text_file(file_path):
     path = Path(file_path)
@@ -23,7 +25,7 @@ def write_text_file(file_path, content):
     return str(path)
 
 
-def run_python_code(file_path, code):
+def run_python_code(file_path, code, packages_root=None):
     path = Path(file_path)
     buffer = io.StringIO()
     namespace = {
@@ -35,6 +37,8 @@ def run_python_code(file_path, code):
 
     try:
         os.chdir(path.parent)
+        if packages_root:
+            activate_runtime_packages(packages_root)
         with contextlib.redirect_stdout(buffer), contextlib.redirect_stderr(buffer):
             exec(compile(code, str(path), "exec"), namespace)
     except Exception:

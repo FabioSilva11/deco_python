@@ -58,6 +58,10 @@ object StorageIconHelper {
         applyIcon(target, iconKey, colorRes)
     }
 
+    fun applyPackageIcon(target: ImageView) {
+        applyIcon(target, "faw-box-open", R.color.icon_document_color)
+    }
+
     private fun applyIcon(target: ImageView, iconKey: String, colorRes: Int) {
         val color = ContextCompat.getColor(target.context, colorRes)
 

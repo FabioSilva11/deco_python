@@ -59,4 +59,22 @@
     <string name="compile_error_message">A execucao terminou com erro.</string>
     <string name="compile_exception_message">Falha ao executar: %1$s</string>
     <string name="file_read_error">Falha ao carregar o arquivo: %1$s</string>
+    <string name="python_packages_title">Bibliotecas Python</string>
+    <string name="python_packages_subtitle">Baixa bibliotecas Python puras do PyPI</string>
+    <string name="python_packages_empty">Nenhuma biblioteca instalada ainda. Use o botao para baixar uma.</string>
+    <string name="python_packages_error">Falha ao carregar bibliotecas: %1$s</string>
+    <string name="python_package_add_title">Baixar biblioteca</string>
+    <string name="python_package_input_hint">Exemplo: requests ou requests==2.32.3</string>
+    <string name="python_package_input_required">Digite o nome da biblioteca.</string>
+    <string name="python_package_resolving_hint">Resolvendo nome no PyPI...</string>
+    <string name="python_package_resolved_hint">Encontrado: %1$s %2$s</string>
+    <string name="python_package_not_resolved_hint">Digite mais para resolver o nome da biblioteca.</string>
+    <string name="python_package_download_action">Baixar</string>
+    <string name="python_package_download_started">Baixando %1$s...</string>
+    <string name="python_package_download_success">%1$s %2$s instalada com sucesso.</string>
+    <string name="python_package_download_error">Falha ao baixar biblioteca: %1$s</string>
+    <string name="python_package_remove_action">Remover biblioteca</string>
+    <string name="python_package_remove_success">Biblioteca removida: %1$s</string>
+    <string name="python_package_remove_error">Falha ao remover biblioteca: %1$s</string>
+    <string name="package_version_format">Versao %1$s</string>
 </resources>

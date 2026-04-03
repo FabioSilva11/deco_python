@@ -12,4 +12,9 @@
         android:orderInCategory="200"
         android:title="@string/action_storage_access"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_python_packages"
+        android:orderInCategory="300"
+        android:title="@string/python_packages_title"
+        app:showAsAction="never" />
 </menu>

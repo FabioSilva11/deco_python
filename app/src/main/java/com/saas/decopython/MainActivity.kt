@@ -115,6 +115,10 @@ class MainActivity : AppCompatActivity() {
                 requestStorageAccess()
                 true
             }
+            R.id.action_python_packages -> {
+                startActivity(PythonPackagesActivity.createIntent(this))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

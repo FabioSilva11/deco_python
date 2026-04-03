@@ -5,6 +5,7 @@
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -22,6 +23,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DecoPython">
+        <activity
+            android:name=".PythonPackagesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DecoPython" />
         <activity
             android:name=".CodeEditorActivity"
             android:exported="false"
