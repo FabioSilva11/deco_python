@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="icon_folder_color">#A8CFB1</color>
+    <color name="icon_document_color">#B7C9BB</color>
+    <color name="icon_generic_color">#C6C7BC</color>
+</resources>
